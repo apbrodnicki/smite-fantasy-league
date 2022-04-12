@@ -1,22 +1,22 @@
 <div align="center" class="row filters">
 	<div class="col">Filter by role:</div>
-	<div class="col filter" (click)="onSort('all')">All</div>
-	<div class="col filter" (click)="onSort('Hunter')">Carry</div>
-	<div class="col filter" (click)="onSort('Support')">Support</div>
-	<div class="col filter" (click)="onSort('Mid')">Mid</div>
-	<div class="col filter" (click)="onSort('Jungle')">Jungle</div>
-	<div class="col filter" (click)="onSort('Solo')">Solo</div>
+	<div class="col filter" (click)="onSortRole('all')">All</div>
+	<div class="col filter" (click)="onSortRole('Hunter')">Carry</div>
+	<div class="col filter" (click)="onSortRole('Support')">Support</div>
+	<div class="col filter" (click)="onSortRole('Mid')">Mid</div>
+	<div class="col filter" (click)="onSortRole('Jungle')">Jungle</div>
+	<div class="col filter" (click)="onSortRole('Solo')">Solo</div>
 </div>
 <hr />
 <table id="player-table" class="table table-striped">
 	<thead>
 		<tr>
-			<th scope="col"></th>
-			<th scope="col">Player</th>
-			<th scope="col">Role</th>
-			<th scope="col">Team</th>
-			<th scope="col">Points</th>
-			<th scope="col">Games Played</th>
+			<th class="th-sm" scope="col"></th>
+			<th class="th-sm" scope="col">Player</th>
+			<th class="th-sm" scope="col">Role</th>
+			<th class="th-sm" scope="col">Team</th>
+			<th class="th-sm filter" scope="col" (click)="onSortPoints()">Points</th>
+			<th class="th-sm" scope="col">Games Played</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -25,7 +25,7 @@
 			<th scope="row">{{ player.playerName }}</th>
 			<td>{{ player.role === 'Hunter' ? 'Carry' : player.role }}</td>
 			<td>{{ player.team_name }}</td>
-			<td>points</td>
+			<td>{{ player.points }}</td>
 			<td>{{ player.games_played }}</td>
 		</tr>
 	</tbody>

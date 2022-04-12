@@ -15,4 +15,5 @@ export interface Player {
 	team_name: string;
 	wards_placed: number;
 	imagePath: string;
+	points: number;
 }
