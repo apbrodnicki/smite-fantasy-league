@@ -1,0 +1,32 @@
+<div align="center" class="row filters">
+	<div class="col">Filter by role:</div>
+	<div class="col filter" (click)="onSort('all')">All</div>
+	<div class="col filter" (click)="onSort('Hunter')">Carry</div>
+	<div class="col filter" (click)="onSort('Support')">Support</div>
+	<div class="col filter" (click)="onSort('Mid')">Mid</div>
+	<div class="col filter" (click)="onSort('Jungle')">Jungle</div>
+	<div class="col filter" (click)="onSort('Solo')">Solo</div>
+</div>
+<hr />
+<table id="player-table" class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">Player</th>
+			<th scope="col">Role</th>
+			<th scope="col">Team</th>
+			<th scope="col">Points</th>
+			<th scope="col">Games Played</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let player of sortedPlayers">
+			<td><img src="/assets/img/players/{{ player.imagePath }}.png"  onerror="this.src='/assets/img/players/empty.png'" alt="player" width="100" height="100"></td>
+			<th scope="row">{{ player.playerName }}</th>
+			<td>{{ player.role === 'Hunter' ? 'Carry' : player.role }}</td>
+			<td>{{ player.team_name }}</td>
+			<td>points</td>
+			<td>{{ player.games_played }}</td>
+		</tr>
+	</tbody>
+</table>

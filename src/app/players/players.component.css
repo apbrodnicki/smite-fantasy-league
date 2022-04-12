@@ -2,6 +2,11 @@
 	cursor: pointer;
 }
 
+.filters {
+	font-weight: bold;
+}
+
 tr {
 	vertical-align: middle;
+	text-align: center;
 }
