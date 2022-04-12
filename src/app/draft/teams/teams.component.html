@@ -1,0 +1,10 @@
+<div class="container">
+	<div [ngClass]="'row'" *ngIf="teams.length > 0">
+		<div [ngClass]="'col-3'" *ngFor="let team of teams">
+			<div class="row">
+				<img src="/assets/img/teams/{{ team.team_shortname }}.png" alt="team logo">
+			</div>
+			<!-- <app-players [team]="team"></app-players> -->
+		</div>
+	</div>
+</div>
