@@ -19,7 +19,7 @@ export class PlayersComponent implements OnInit {
 		this.http.get<{ [key: string]: Player }>('https://esports.hirezstudios.com/esportsAPI/smite/stats/7263')
 		.pipe(map(responseData => {
 			const playersArray: Player[] = [];
-			console.log(responseData);
+
 			for (const key in responseData) {
 				if (responseData.hasOwnProperty(key)) {
 					if (responseData[key].role !== 'Coach') {
@@ -32,7 +32,6 @@ export class PlayersComponent implements OnInit {
 			return playersArray;
 		}))
 		.subscribe(players => {
-			console.log(players);
 			this.totalPlayers = players;
 			this.sortedPlayers = players;
 		});
