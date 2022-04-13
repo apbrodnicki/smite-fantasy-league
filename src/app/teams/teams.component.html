@@ -1,9 +1,25 @@
 <div class="container">
-	<div [ngClass]="'row'" *ngIf="teams.length > 0">
-		<div [ngClass]="'col-3'" *ngFor="let team of teams">
-			<div class="row">
-				<img src="/assets/img/teams/{{ team.team_shortname }}.png" alt="team logo">
-			</div>
-		</div>
+	<div class="row header">
+		<h2>Team Standings:</h2>
 	</div>
+	<table width="100%">
+		<thead>
+			<tr>
+				<th class="th-sm col-2">Position</th>
+				<th class="th-sm col-4">Team</th>
+				<th class="th-sm co1-2">Wins</th>
+				<th class="th-sm col-2">Losses</th>
+				<th class="th-sm col-2">Win rate</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let team of teams">
+				<td>{{ team.rank }}</td>
+				<td><img src="/assets/img/teams/{{ team.team_shortname }}.svg" alt="team logo" width="150" height="150"></td>
+				<td>{{ team.wins }}</td>
+				<td>{{ team.losses }}</td>
+				<td>{{ team.win_percent }}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

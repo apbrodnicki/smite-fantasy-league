@@ -10,7 +10,7 @@ import { Team } from './team.model';
 	styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
-	teams = [];
+	teams: Team[] = [];
 
 	constructor(private http: HttpClient) {}
 
