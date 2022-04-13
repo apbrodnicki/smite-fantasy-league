@@ -82,6 +82,12 @@ export class PlayersComponent implements OnInit {
 			this.sort = 'asc';
 		}
 	};
+
+	onDraftPlayer(player: Player) {
+		for (const key in this.sortedPlayers) {
+			if (this.sortedPlayers[key].playerName === player.playerName) delete this.sortedPlayers[key];
+		}
+	}
 }
 
 function calculatePoints(player: Player) {

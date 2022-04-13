@@ -8,7 +8,7 @@
 	<div class="col filter" (click)="onSortRole('Solo')">Solo</div>
 </div>
 <hr />
-<table id="player-table" class="table table-striped">
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th class="th-sm" scope="col"></th>
@@ -16,17 +16,17 @@
 			<th class="th-sm" scope="col">Role</th>
 			<th class="th-sm" scope="col">Team</th>
 			<th class="th-sm filter" scope="col" (click)="onSortPoints()">Points</th>
-			<th class="th-sm" scope="col">Games Played</th>
+			<th class="th-sm" scope="col">Draft Player</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr *ngFor="let player of sortedPlayers">
-			<td><img src="/assets/img/players/{{ player.imagePath }}.png"  onerror="this.src='/assets/img/players/empty.png'" alt="player" width="100" height="100"></td>
-			<th scope="row">{{ player.playerName }}</th>
-			<td>{{ player.role === 'Hunter' ? 'Carry' : player.role }}</td>
-			<td>{{ player.team_name }}</td>
-			<td>{{ player.points }}</td>
-			<td>{{ player.games_played }}</td>
+			<td *ngIf="player !== undefined"><img src="/assets/img/players/{{ player.imagePath }}.png"  onerror="this.src='/assets/img/players/empty.png'" alt="player" width="100" height="100"></td>
+			<th *ngIf="player !== undefined" scope="row">{{ player.playerName }}</th>
+			<td *ngIf="player !== undefined">{{ player.role === 'Hunter' ? 'Carry' : player.role }}</td>
+			<td *ngIf="player !== undefined">{{ player.team_name }}</td>
+			<td *ngIf="player !== undefined">{{ player.points }}</td>
+			<td *ngIf="player !== undefined"><button class="btn btn-primary" (click)="onDraftPlayer(player)">Draft</button></td>
 		</tr>
 	</tbody>
 </table>
