@@ -1,0 +1,29 @@
+footer {
+	background-color: #121212;
+	color: #636261;
+}
+
+.footer-heading {
+	font-size: 30px;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin: 0px 30px;
+}
+
+ul {
+	display: inline-flex;
+	list-style-type: none;
+}
+
+li {
+	padding: 0px 5px;
+}
+
+footer a {
+	color: #636261;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: #a19e9c;
+}

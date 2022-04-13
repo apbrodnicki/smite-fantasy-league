@@ -1,3 +1,7 @@
 nav {
 	padding: 20px;
 }
+
+.nav-tabs {
+	border: none;
+}
